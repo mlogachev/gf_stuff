@@ -1,46 +1,88 @@
-$text-pr: #f5f5f5;
-$text-pr-d: #d5d5d5;
+$text-pr: #e5e5e5;
+$text-pr-d: #a5a5a5;
 
-body {
+//blue
+$navy: #000080;
+$midnight: #191970;
+$royal: #4169E1;
+$steel: #4682B4;
+
+$skoyel: #FFEE80;
+
+$orange: #FF7A00;
+$lb: #00E0FF;
+
+
+$smoblu: #3366CC;
+$smblu: #15499B;
+$smorg: #EB9A0B;
+$smoorg: #FFCC66;
+
+
+@mixin background-size($value) {
+	-webkit-background-size: $value;
+    -moz-background-size: $value;
+    background-size: $value;
+    -o-background-size: $value;
+}
+
+html, body {
 	margin: 0px;
 	font-family: 'Roboto', sans-serif;
 }
 
 header {
-	background-color: rgba(0,0,0,0);
+	z-index: 9999;
+	background-color: rgba(240,240,240,0);
 	position: fixed;
 	width: 100%;
 	margin: 0px;
 	padding: 0px;
-	border-bottom: 1px solid $text-pr;
+	border-bottom: 1px solid;
+	display: inline-block;
 
+	p {
+		text-align: right;
+		display: inline-block;
+		width: 30%; 
+	}
 
+	nav {
+		display: inline-block;
+		margin: 0px;
+		width: 66%;
 
-	ul {
-		list-style-type: none;
-		padding: 0px;
-		display: flex;
-		justify-content: right;
+		ul {
+			list-style-type: none;
+			padding: 0px;
+			display: flex;
+			justify-content: right;
 
-		li {
-			display: inline-block;
-			padding-left: 4%;
-			a {
-				text-decoration: none;
-				color: $text-pr;
+			li {
+				display: inline-block;
+				margin-left: 15px;
+				a {
+					color: #000;
+					text-decoration: none;
 
-				&:hover {
-					color: $text-pr-d;
+					&:hover {
+						color: $text-pr-d;
+					}
 				}
 			}
 		}
 	}
 }
 
-.jumbo {
-	height: 100vh;
-	width: 100%;
-	background: url("../img/intro.jpg") 100% 100%;
+#jumbo {
+    width: 100%;
+    height: 100vh;
+    
+    @include background-size(cover);
+
+
+	background-image: url("../img/intro.jpg");
+	background-repeat: no-repeat;
 	color: $text-pr;
 	
 	display: flex;
@@ -68,4 +110,104 @@ header {
 			list-style-type: none;
 		}
 	}
+}
+
+.lead {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#info {
+	padding: 100px;
+	margin: 0px;
+	background: $smoblu;
+	color: $text-pr;	
+	text-align: center;
+
+	h1 {
+		margin-top: 0px;
+		padding-top: 20px;
+		border-bottom: 1px solid;
+	}
+
+	p {
+		padding-left: 20%;
+		margin-top: 30px;
+		width: 60%;
+		margin: 9px;
+	}
+}
+
+#team {
+
+
+	padding: 100px 0px 100px 0px;
+
+	.profiles-jumbo {
+		margin-left: 5%;
+		display: flex;
+		justify-content: center;
+
+		.profile {
+			width: 30%;
+			text-align: center;
+
+			img {
+				width: 90%;
+				height: 90%;
+				border-radius: 98%;
+			}
+
+			a {
+				text-decoration: none;
+				color: rgba(0,0,0,1);
+
+				&:hover {
+					color: rgba(80,80,80,1);
+				}
+			}
+
+
+		}
+	}
+}
+
+#photo {
+	overflow: hidden;
+
+	.photo-box {
+		float: left;
+		width: 33.3%;
+		padding-bottom: 33%;
+		position: relative;
+		img {
+			position: absolute;
+			height: 100%;
+			width: 100%;
+		}
+	}
+}
+
+#students {
+	padding: 100px 0px 100px 0px;
+	text-align: center;
+	background-color: $smorg;
+	color: $text-pr;
+
+	p {
+		font-size: 200%;
+	}
+}
+
+#contact {
+	background-color: $smoorg;
+	padding: 100px 0px 100px 0px;
+	text-align: center;
+}
+
+#apply {
+	padding: 100px 0px 100px 0px;
+	text-align: center;
+	background-color: $smblu;
 }
