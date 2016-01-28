@@ -9,7 +9,7 @@ $(document).ready(function(){
         
         if(scroll_pos > 150) {
             $("#index-header").stop().animate({
-                backgroundColor: "rgba(240,240,240,1)"
+                backgroundColor: "rgba(240,240,240,0.5)"
             }, 50);
         } else {
             $("#index-header").stop().animate({
@@ -18,6 +18,7 @@ $(document).ready(function(){
         }
     });
 
+    //nav links scrool to section
     $('.page-nav').on('click', function(event) {
         var target = $($(this).attr('href'));
         if( target.length ) {

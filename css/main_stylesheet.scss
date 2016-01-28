@@ -28,7 +28,21 @@ $smoorg: #FFCC66;
 
 html, body {
 	margin: 0px;
-	font-family: 'Roboto', sans-serif;
+	font-family:  'Roboto' , 'Marck Script', 'Press Start 2P', sans-serif;
+}
+
+section {
+	min-height: 100vh;
+}
+
+#info, #team, #students, #apply, #contact {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container {
+	
 }
 
 header {
@@ -119,11 +133,10 @@ header {
 }
 
 #info {
-	padding: 100px;
+	// padding: 100px;
 	margin: 0px;
 	background: $smoblu;
 	color: $text-pr;	
-	text-align: center;
 
 	h1 {
 		margin-top: 0px;
@@ -131,18 +144,35 @@ header {
 		border-bottom: 1px solid;
 	}
 
-	p {
-		padding-left: 20%;
-		margin-top: 30px;
-		width: 60%;
-		margin: 9px;
+	.pros {
+		overflow: hidden;
+		display: inline-block;
+		margin: 15px;
+
+		.col {
+			float: left;
+			width: 50%;
+			max-height: 200px;
+			position: relative;
+
+			p {
+				text-align: center;
+				padding: 20px;
+			}
+
+			h3 {
+				@extend p;
+				font-style: bold;
+			}
+
+		}
 	}
 }
 
 #team {
 
 
-	padding: 100px 0px 100px 0px;
+	// padding: 100px 0px 100px 0px;
 
 	.profiles-jumbo {
 		margin-left: 5%;
@@ -179,18 +209,36 @@ header {
 	.photo-box {
 		float: left;
 		width: 33.3%;
-		padding-bottom: 33%;
+		height: 50vh;
 		position: relative;
+
 		img {
 			position: absolute;
 			height: 100%;
 			width: 100%;
 		}
+
+		.description {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			background-color: $smoblu;
+			z-index: 100;
+			opacity: 0;
+			color: $text-pr;
+
+			&:hover {
+				opacity: 0.8;
+			}
+		}
 	}
 }
 
 #students {
-	padding: 100px 0px 100px 0px;
+	// padding: 100px 0px 100px 0px;
 	text-align: center;
 	background-color: $smorg;
 	color: $text-pr;
@@ -202,12 +250,12 @@ header {
 
 #contact {
 	background-color: $smoorg;
-	padding: 100px 0px 100px 0px;
+	// padding: 100px 0px 100px 0px;
 	text-align: center;
 }
 
 #apply {
-	padding: 100px 0px 100px 0px;
+	// padding: 100px 0px 100px 0px;
 	text-align: center;
 	background-color: $smblu;
 }
